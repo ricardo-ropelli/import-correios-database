@@ -53,8 +53,6 @@ def read_all_file_lines_and_perform_insert(file, path, connection):
             connection.commit()
             print("Executing commit...")
 
-    connection.close()
-
 
 def read_all_file(connection):
     # r=root, d=directories, f = files
@@ -63,6 +61,8 @@ def read_all_file(connection):
             if '.txt' in file or '.TXT' in file:
                 path = os.path.join(root, file)
                 read_all_file_lines_and_perform_insert(file, path, connection)
+
+    connection.close()
 
 
 def establish_connection_to_database():
