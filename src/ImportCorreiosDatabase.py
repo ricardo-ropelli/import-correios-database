@@ -83,6 +83,6 @@ def main():
 
 if __name__ == "__main__":
     print("----------------------------------------------------------------------------")
-    print("Initialization of import Correios database: '" + GENERAL_CONFIG['root_dir']) + "'."
+    print("Initialization of import Correios database: '" + GENERAL_CONFIG['root_dir'] + "'.")
     print("----------------------------------------------------------------------------")
     main()
