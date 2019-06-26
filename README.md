@@ -2,7 +2,7 @@
 Python script to import correios database.
 
 To be able to use, set 'GENERAL_CONFIG' with your database connection info and root directory where your all files are.
-'FILE_TO_TABLE' is a map of file name -> table name. This is used to parse 'insert into <table name>' statement.
+'FILE_TO_TABLE' is a map of file name -> table name. This is used to parse 'insert into table_name' statement.
 
 # Example
 ```
