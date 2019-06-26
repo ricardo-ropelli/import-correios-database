@@ -8,7 +8,8 @@ GENERAL_CONFIG = {
     'database': '',
     'port': '',
     'user': '',
-    'password': ''
+    'password': '',
+    'commit_each': 25
 }
 
 
@@ -48,10 +49,10 @@ def read_all_file_lines_and_perform_insert(file, path, connection):
         cur.execute(parse_file_information(file, line))
         commit_controller = commit_controller + 1
 
-        if commit_controller >= 10:
-            commit_controller = 0
-            connection.commit()
+        if commit_controller >= GENERAL_CONFIG['commit_each']:
             print("Executing commit...")
+            connection.commit()
+            commit_controller = 0
 
 
 def read_all_file(connection):
